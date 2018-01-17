@@ -9,6 +9,6 @@ Currently a  script that can crack singular T1 locks. This includes:
 - c003
 - l0cket
 
-And a script that [totally doesn't] steal money...
+Also a harvester!
 
 Happy hacking!
