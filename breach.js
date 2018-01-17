@@ -54,7 +54,7 @@ function(context, args) {
         x = 0;
         while (r.indexOf("UNLOCKED") < 0) {
             var c1 = ["red", "orange", "yellow", "lime", "green", "cyan", "blue", "purple"];
-            var c001 = { c001: c1[x], color_digit:c1[x].length()};
+            var c001 = { c001: c1[x], color_digit:c1[x].length};
             Object.assign(c001, args);
             r = target.call(c001);
             x++;
