@@ -12,7 +12,7 @@ function(context, args) {
             var ez21 = {EZ_21: p[x]};
             Object.assign(ez21, args);
             r = target.call(ez21);
-            x++;
+            x++
         }
     }
 
@@ -21,14 +21,14 @@ function(context, args) {
         while(r.indexOf("digit") < 0) {
             r = target.call({EZ_35:p[x]});
             unlocked = p[x];
-            x++;
+            x++
         }
         x = 0;
         while(r.indexOf("UNLOCKED") < 0) {
             var ez35 = {EZ_35:unlocked, digit:x};
             Object.assign(ez35, args);
             r = target.call(ez35);
-            x++;
+            x++
         }
     }
 
@@ -57,7 +57,7 @@ function(context, args) {
             var c001 = { c001: c1[x], color_digit:c1[x].length};
             Object.assign(c001, args);
             r = target.call(c001);
-            x++;
+            x++
         }
     }
 
@@ -68,7 +68,7 @@ function(context, args) {
             var c002 = { c002: c2[x], c002_complement: c2[(x + 4) % 8] };
             Object.assign(c002, args);
             r = target.call(c002);
-            x++;
+            x++
         }
     }
 
@@ -90,7 +90,7 @@ function(context, args) {
             var l0ck = {l0cket:lck[x]};
             Object.assign(l0ck, args);
             r = target.call(l0ck);
-            x++;
+            x++
         }
     }
     return r;
