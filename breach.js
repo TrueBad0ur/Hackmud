@@ -9,7 +9,9 @@ function(context, args) {
     if(r.indexOf("EZ_21") > -1) {
         x = 0;
         while(r.indexOf("UNLOCKED") < 0) {
-            r = target.call({EZ_21: p[x]});
+            var ez21 = {EZ_21: p[x]};
+            Object.assign(ez21, args);
+            r = target.call(ez21);
             x++;
         }
     }
@@ -21,9 +23,12 @@ function(context, args) {
             unlocked = p[x];
             x++;
         }
+        x = 0;
         while(r.indexOf("UNLOCKED") < 0) {
-            r = target.call({EZ_35:unlocked, digit:y})
-            y++;
+            var ez35 = {EZ_35:unlocked, digit:x};
+            Object.assign(ez35, args);
+            r = target.call(ez35);
+            x++;
         }
     }
 
@@ -35,21 +40,32 @@ function(context, args) {
             unlocked = p[x]
             x++
         }
-
+        x = 0;
         while (r.indexOf("UNLOCKED") < 0) {
             var d = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-            var ez40 = { EZ_40: unlocked, ez_prime: d[y] }
+            var ez40 = { EZ_40: unlocked, ez_prime: d[x] }
             Object.assign(ez40, args);
             r = target.call(ez40);
-            y++
+            x++
+        }
+    }
+
+    if (r.indexOf("c001") > -1) {
+        x = 0;
+        while (r.indexOf("UNLOCKED") < 0) {
+            var c1 = ["red", "orange", "yellow", "lime", "green", "cyan", "blue", "purple"];
+            var c001 = { c001: c1[x], color_digit:c1[x].length()};
+            Object.assign(c001, args);
+            r = target.call(c001);
+            x++;
         }
     }
 
     if (r.indexOf("c002") > -1) {
         x = 0;
         while (r.indexOf("UNLOCKED") < 0) {
-            var c1 = ["red", "orange", "yellow", "lime", "green", "cyan", "blue", "purple"];
-            var c002 = { c002: c1[x], c002_complement: c1[(x + 4) % 8] };
+            var c2 = ["red", "orange", "yellow", "lime", "green", "cyan", "blue", "purple"];
+            var c002 = { c002: c2[x], c002_complement: c2[(x + 4) % 8] };
             Object.assign(c002, args);
             r = target.call(c002);
             x++;
@@ -64,6 +80,17 @@ function(context, args) {
             Object.assign(c003, args);
             r = target.call(c003);
             x++
+        }
+    }
+
+    if(r.indexOf("l0cket") > -1) {
+        x = 0;
+        while(r.indexOf("UNLOCKED") < 0) {
+            var lck = ["6hh8xw", "cmppiq", "sa23uw", "tvfkyq", "uphlaw", "vc2c7q", "xwz7ja"];
+            var l0ck = {l0cket:lck[x]};
+            Object.assign(l0ck, args);
+            r = target.call(l0ck);
+            x++;
         }
     }
     return r;
