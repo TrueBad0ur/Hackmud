@@ -1,10 +1,4 @@
 function(context, args){
-    // var m = #hs.accts.balance({});
-    // #ms.accts.xfer_gc_to({to:"md5sum", amount:m})
-    // #ms.chats.join({channel:"0000"})
-    // #fs.chats.send({channel:"0000", msg:"If you need some npc accounts try md5sum.npcs"})
-    // #fs.chats.send({channel:"0000", msg:"I got around 20 or so from there"})
-    // return "You're pretty dank!";
     var call = #fs.archaic.public({});
     var call2 = #fs.archaic.public();
     var nav = call.substring(call.lastIndexOf("with ") + 5, call.lastIndexOf(":"))
@@ -13,5 +7,12 @@ function(context, args){
     var passPage = #fs.archaic.public({[nav]:passPageString})
     var pass = passPage.substring(passPage.indexOf("strategy") + 9, passPage.indexOf("and we") - 1)
     var hp = #fs.archaic.public({[nav]:hidden})
-    return pass
+    var passKey;
+    var x = 0;
+    var cloud = #fs.archaic.public({[nav]:hidden, password:pass, pass:pass, p:pass, project:"cloudskimmer.da7a"})
+    var ende = #fs.archaic.public({[nav]:hidden, password:pass, pass:pass, p:pass, project:"ende.exe"})
+    var semordnilap = #fs.archaic.public({[nav]:hidden, password:pass, pass:pass, p:pass, project:"semordnilap.sh"})
+    var ragnaroxx = #fs.archaic.public({[nav]:hidden, password:pass, pass:pass, p:pass, project:"ragnaroxx.sh"})
+    var projects = [cloud, ende, semordnilap, ragnaroxx]
+    return projects
 }
