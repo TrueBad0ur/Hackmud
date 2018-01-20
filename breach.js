@@ -4,7 +4,6 @@ function(context, args) {
     var p = ["unlock", "open", "release"];
     var unlocked;
     var x = 0;
-    var y = 0;
     var ez21, ez35, ez40, c001, c002, c003, l0ck
 
     if(r.indexOf("EZ_21") > -1) {
@@ -35,7 +34,6 @@ function(context, args) {
 
     if (r.indexOf("EZ_40") > -1) {
         x = 0;
-        y = 0;
         while (r.indexOf("ez_prime") < 0) {
             r = target.call({ EZ_40: p[x] });
             unlocked = p[x]
@@ -93,10 +91,6 @@ function(context, args) {
             r = target.call(l0ck);
             x++
         }
-    }
-    while(r.indexOf("UNLOCKED") < 0) {
-        Object.assign(ez21, ez35, ez40, c001, c002, c003, l0ck)
-        r=target.call(ez21)
     }
     return r;
 }
