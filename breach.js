@@ -4,7 +4,7 @@ function(context, args) {
     var p = ["unlock", "open", "release"];
     var unlocked;
     var x = 0;
-    var ez21, ez35, ez40, c001, c002, c003, l0ck
+    var ez21, ez35, ez40, c001, c002, c003, l0ck;
 
     if(r.indexOf("EZ_21") > -1) {
         x = 0;
@@ -12,7 +12,7 @@ function(context, args) {
              ez21 = {EZ_21: p[x]};
             Object.assign(ez21, args);
             r = target.call(ez21);
-            x++
+            x++;
         }
     }
 
@@ -21,14 +21,14 @@ function(context, args) {
         while(r.indexOf("digit") < 0) {
             r = target.call({EZ_35:p[x]});
             unlocked = p[x];
-            x++
+            x++;
         }
         x = 0;
         while(r.indexOf("UNLOCKED") < 0) {
              ez35 = {EZ_35:unlocked, digit:x};
             Object.assign(ez35, args);
             r = target.call(ez35);
-            x++
+            x++;
         }
     }
 
@@ -36,8 +36,8 @@ function(context, args) {
         x = 0;
         while (r.indexOf("ez_prime") < 0) {
             r = target.call({ EZ_40: p[x] });
-            unlocked = p[x]
-            x++
+            unlocked = p[x];
+            x++;
         }
         x = 0;
         while (r.indexOf("UNLOCKED") < 0) {
@@ -45,7 +45,7 @@ function(context, args) {
              ez40 = { EZ_40: unlocked, ez_prime: d[x] }
             Object.assign(ez40, args);
             r = target.call(ez40);
-            x++
+            x++;
         }
     }
 
@@ -56,7 +56,7 @@ function(context, args) {
              c001 = { c001: c1[x], color_digit:c1[x].length};
             Object.assign(c001, args);
             r = target.call(c001);
-            x++
+            x++;
         }
     }
 
@@ -67,7 +67,7 @@ function(context, args) {
              c002 = { c002: c2[x], c002_complement: c2[(x + 4) % 8] };
             Object.assign(c002, args);
             r = target.call(c002);
-            x++
+            x++;
         }
     }
 
@@ -78,7 +78,7 @@ function(context, args) {
              c003 = { c003: c3[x], c003_triad_1: c3[(x + 5) % 8], c003_triad_2: c3[(x + 3) % 8] };
             Object.assign(c003, args);
             r = target.call(c003);
-            x++
+            x++;
         }
     }
 
@@ -89,7 +89,7 @@ function(context, args) {
              l0ck = {l0cket:lck[x]};
             Object.assign(l0ck, args);
             r = target.call(l0ck);
-            x++
+            x++;
         }
     }
     return r;
